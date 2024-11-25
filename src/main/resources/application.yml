@@ -1,23 +1,24 @@
 spring:
   application:
-    name: "configserver"
+    name: configserver
   profiles:
     active: git
   cloud:
     config:
       server:
         git:
-          uri: "https://github.com/muhammedkalabasi10/movinghouseconfigs.git"
+          uri: https://github.com/muhammedkalabasi10/movinghouseconfigs.git
           default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
+      enabled: true
 
   rabbitmq:
-    host: "localhost"
+    host: localhost
     port: 5672
-    username: "guest"
-    password: "guest"
+    username: guest
+    password: guest
 
 management:
   endpoints:
@@ -34,5 +35,5 @@ management:
       probes:
         enabled: true
 
-  server:
-    port: 8071
+server:
+  port: 8071
